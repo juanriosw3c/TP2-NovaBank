@@ -1,0 +1,246 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 0.82fr 1.35fr;
+  gap: 5.5rem;
+  align-items: center;
+  background: radial-gradient(circle at top left, #2e1065, #020617 45%);
+  color: #f8fafc;
+  padding: 2.6rem 9%;
+  overflow: hidden;
+}
+
+.login-brand h1 {
+  font-size: 4.7rem;
+  line-height: 0.95;
+  margin-bottom: 1.4rem;
+}
+
+.login-brand h1 span {
+  color: #8b5cf6;
+}
+
+.login-brand p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.6rem;
+}
+
+.brand-logo img {
+  width: 300px;
+  height: auto;
+}
+
+.brand-features {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.brand-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 0.9rem;
+  background: rgba(124, 58, 237, 0.16);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a855f7;
+  flex-shrink: 0;
+}
+
+.brand-feature h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.brand-feature p {
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  max-width: 360px;
+}
+
+.bank-card {
+  width: 285px;
+  height: 165px;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.95), rgba(76, 29, 149, 0.95));
+  border-radius: 1.4rem;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-chip {
+  width: 46px;
+  height: 34px;
+  border-radius: 0.55rem;
+  background: linear-gradient(135deg, #facc15, #eab308);
+}
+
+.card-number {
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  color: white;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-footer strong {
+  letter-spacing: 1px;
+}
+
+.login-card {
+  width: min(100%, 1040px);
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(124, 58, 237, 0.18);
+}
+
+.login-form,
+.register-panel {
+  padding: 3.4rem;
+}
+
+.login-form {
+  border-right: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.login-form h2,
+.register-panel h2 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.login-form p,
+.register-panel p {
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 1.7rem;
+}
+
+.login-form form,
+.register-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.login-form label,
+.register-panel label {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+.login-form input,
+.register-panel input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.7);
+  color: #f8fafc;
+}
+
+.login-form button,
+.register-panel button,
+.register-panel a {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.95rem;
+  border-radius: 0.8rem;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-panel ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+.register-panel li::before {
+  content: "✓";
+  color: #a855f7;
+  margin-right: 0.6rem;
+}
+
+.secondary-button {
+  background: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+}
+
+.security-footer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .login-page {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+
+  .login-card {
+    grid-template-columns: 1fr;
+  }
+
+  .login-form {
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  }
+
+  .security-footer {
+    position: static;
+    transform: none;
+    margin: 2rem auto 0;
+  }
+}
