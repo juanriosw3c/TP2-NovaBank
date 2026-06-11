@@ -1,16 +1,33 @@
-# React + Vite
+# NovaBank
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto académico desarrollado para la materia Plataformas de Desarrollo.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- React Router
+- Lucide React
+- CSS
 
-## React Compiler
+## Funcionalidades actuales
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Pantalla Login
+- Pantalla Registro
+- Diseño UI estilo Fintech
 
-## Expanding the ESLint configuration
+## Funcionalidades futuras
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Landing Page
+- Dashboard Cliente
+- Dashboard Administrador
+- Gestión de Cuentas
+- Transferencias
+- Auditoría de Operaciones
+
+## Equipo
+
+- Juan José Ríos
+- Tobias Vitale
+- Federico Egas
+- Santiago Castillo
