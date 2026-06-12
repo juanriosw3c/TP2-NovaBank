@@ -6,7 +6,7 @@ import MovementsList from "../../components/Dashboard/MovementsList";
 import QuickActions from "../../components/Dashboard/QuickActions";
 import { Eye } from "lucide-react";
 import { dashboardData } from "../../mocks/dashboardClienteData";
-import "./DashboardCliente.css";
+import "./dashboardAdmin.css";
 
 
 
