@@ -1,26 +1,33 @@
 import { useState } from "react";
-import { Bell, Menu, LogOut, User, Settings, X, Home, ArrowLeftRight, CreditCard, BarChart3 } from "lucide-react";
+import { Bell, Menu, LogOut, User, Settings, X } from "lucide-react";
 import logo from "../../assets/logo.png";
+import styles from "../Dashboard/styles/DashboardNavbar.module.css";
+import { useNavigate } from "react-router-dom";
 
-// 1. IMPORTAMOS EL MÓDULO CSS COMO UN OBJETO JS
-import styles from "../Dashboard/styles/DashboardNavbar.module.css"; 
-
-function DashboardNavbar({ userInitials = "FG" }) {
+function DashboardNavbar({
+  userInitials = "FG",
+  onToggleSidebar,
+  isSidebarOpen,
+}) {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [unreadNotifications, setUnreadNotifications] = useState(true);
-  const [showSidebar, setShowSidebar] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Ficticiamente acá se borrarían tokens o sesiones en el futuro
+    navigate("/login");
+  };
 
   return (
-    // 2. USAMOS LAS PROPIEDADES DEL OBJETO STYLES
     <header className={styles.dashboardNavbar}>
       <div className={styles.dashboardBrand}>
-        <button 
-          className={styles.iconButton} 
-          type="button" 
+        <button
+          className={styles.iconButton}
+          type="button"
           aria-label="Abrir menu"
-          onClick={() => setShowSidebar(!showSidebar)}
+          onClick={onToggleSidebar} // 2. Ejecuta la acción del padre
         >
-          {showSidebar ? <X size={22} /> : <Menu size={22} />}
+          {isSidebarOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
         <img src={logo} alt="NovaBank" />
       </div>
@@ -37,9 +44,9 @@ function DashboardNavbar({ userInitials = "FG" }) {
         </button>
 
         <div className={styles.profileContainer}>
-          <button 
-            className={styles.profileButton} 
-            type="button" 
+          <button
+            className={styles.profileButton}
+            type="button"
             aria-label="Perfil"
             onClick={() => setShowProfileMenu(!showProfileMenu)}
           >
@@ -55,32 +62,13 @@ function DashboardNavbar({ userInitials = "FG" }) {
                 <Settings size={16} /> Configuración
               </button>
               <hr />
-              <button type="button" className={styles.logoutBtn}>
+              <button type="button" className={styles.logoutBtn} onClick={handleLogout}>
                 <LogOut size={16} /> Cerrar sesión
               </button>
             </div>
           )}
         </div>
       </div>
-
-      {showSidebar && (
-        <aside className={styles.sidebarMenu}>
-          <nav>
-            <a href="#inicio" className={styles.active}>
-              <Home size={18} style={{ marginRight: '12px' }} /> Inicio
-            </a>
-            <a href="#transferencias">
-              <ArrowLeftRight size={18} style={{ marginRight: '12px' }} /> Transferencias
-            </a>
-            <a href="#tarjetas">
-              <CreditCard size={18} style={{ marginRight: '12px' }} /> Mis Tarjetas
-            </a>
-            <a href="#inversiones">
-              <BarChart3 size={18} style={{ marginRight: '12px' }} /> Inversiones
-            </a>
-          </nav>
-        </aside>
-      )}
     </header>
   );
 }

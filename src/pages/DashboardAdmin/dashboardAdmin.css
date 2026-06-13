@@ -1,28 +1,13 @@
-.account-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  border-radius: 999px;
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  padding: 0.7rem 1.1rem;
-  font-weight: 700;
-}
+/* ==========================================================================
+   ESTILOS DE ESTRUCTURA Y LAYOUT GLOBAL PARA EL DASHBOARD DE ADMIN
+   ========================================================================== */
 
-.account-status span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #10b981;
-}
-/* Esto es todo lo que sobrevive en tu DashboardCliente.css global */
 .client-dashboard {
   min-height: 100vh;
   background: #070713;
   color: #f8fafc;
   padding-bottom: 2rem;
-  padding-top: 92px;
+  padding-top: 92px; /* Espacio fijo para el navbar */
 }
 
 .dashboard-shell {
@@ -32,6 +17,7 @@
   transition: margin-left 0.3s ease;
 }
 
+/* Cabecera del Administrador */
 .dashboard-hero {
   display: flex;
   align-items: center;
@@ -55,16 +41,32 @@
   font-size: 1.7rem;
 }
 
+/* Badge del Rol (Admin/SuperAdmin) adaptado a la estética violeta */
+.account-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(124, 58, 237, 0.12);
+  color: #a78bfa;
+  padding: 0.7rem 1.1rem;
+  font-weight: 700;
+}
+
+.account-status span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a78bfa;
+}
+
+/* Grilla principal de dos columnas (Aprobaciones y Logs) */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 2rem;
-}
-
-.dashboard-side {
-  display: grid;
-  gap: 1.5rem;
 }
 
 .dashboard-footer {
@@ -76,11 +78,22 @@
   margin-top: 2rem;
 }
 
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+
 @media (max-width: 1000px) {
-  .dashboard-shell { width: min(100% - 2rem, 1180px); }
-  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-shell { 
+    width: min(100% - 2rem, 1180px); 
+  }
+  .dashboard-grid { 
+    grid-template-columns: 1fr; /* Pasa a una sola columna en tablets */
+  }
 }
 
 @media (max-width: 640px) {
-  .dashboard-hero { align-items: flex-start; flex-direction: column; }
+  .dashboard-hero { 
+    align-items: flex-start; 
+    flex-direction: column; 
+  }
 }

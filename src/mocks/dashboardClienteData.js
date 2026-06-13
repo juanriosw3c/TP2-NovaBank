@@ -3,8 +3,6 @@ import {
   BadgeDollarSign,
   CreditCard,
   Landmark,
-  MoreHorizontal,
-  UserRound,
 } from "lucide-react";
 
 
@@ -27,8 +25,7 @@ export const dashboardData = {
     { label: "Comprar dólar", icon: BadgeDollarSign, tone: "green" },
     { label: "Tarjetas", icon: CreditCard, tone: "yellow" },
     { label: "Transferir", icon: ArrowLeftRight, tone: "blue" },
-    { label: "Mis datos", icon: UserRound, tone: "pink" },
-    { label: "Ver todo", icon: MoreHorizontal, tone: "violet" },
+    { label: "Mis movimientos", icon: ArrowLeftRight, tone: "violet" },
   ],
   movements: [
     {

@@ -7,19 +7,33 @@ import QuickActions from "../../components/Dashboard/QuickActions";
 import { Eye } from "lucide-react";
 import { dashboardData } from "../../mocks/dashboardClienteData";
 import "./DashboardCliente.css";
-
-
+import Sidebar from "../../components/Dashboard/Sidebar";
+import { useState } from "react";
 
 function DashboardCliente() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <main className="client-dashboard">
-      <DashboardNavbar userInitials={dashboardData.user.initials} />
+      <DashboardNavbar
+        userInitials={dashboardData.user.initials}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        isSidebarOpen={isSidebarOpen}
+      />
+
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        isAdmin={true}
+      />
 
       <div className="dashboard-shell">
         <section className="dashboard-hero">
           <div>
             <p>Buen día,</p>
-            <h1>{dashboardData.user.name} <span>👋</span></h1>
+            <h1>
+              {dashboardData.user.name} <span>👋</span>
+            </h1>
           </div>
 
           <span className="account-status">
@@ -41,7 +55,10 @@ function DashboardCliente() {
           <MovementsList movements={dashboardData.movements} />
 
           <div className="dashboard-side">
-            <CardSummary card={dashboardData.card} credit={dashboardData.credit} />
+            <CardSummary
+              card={dashboardData.card}
+              credit={dashboardData.credit}
+            />
             <InvestmentsList investments={dashboardData.investments} />
           </div>
         </section>
