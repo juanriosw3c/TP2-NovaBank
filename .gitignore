@@ -1,3 +1,9 @@
+# Claude
+.claude
+
+# Lock files (proyecto usa pnpm)
+package-lock.json
+
 # Logs
 logs
 *.log

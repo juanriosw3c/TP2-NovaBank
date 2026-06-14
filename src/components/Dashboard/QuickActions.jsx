@@ -1,19 +1,20 @@
 import styles from "../Dashboard/styles/QuickActions.module.css"; // 1. Importamos el módulo
+import { Link } from "react-router-dom";
 
 function QuickActions({ actions }) {
   return (
     <section className={styles.dashboardSection}>
       <h2 className={styles.sectionTitle}>Accesos rápidos</h2>
-      
+
       <div className={styles.quickActions}>
         {actions.map((action) => {
           // Si pasás los componentes de Lucide en la data, los recuperamos acá
-          const Icon = action.icon; 
+          const Icon = action.icon;
 
           return (
-            <button 
-              key={action.id || action.label} 
-              type="button" 
+            <Link
+              key={action.id || action.label}
+              to={action.path || "#"}
               className={styles.quickAction}
             >
               {/* Combinamos la clase base del ícono con su color dinámico */}
@@ -21,7 +22,7 @@ function QuickActions({ actions }) {
                 <Icon size={24} />
               </div>
               <span>{action.label}</span>
-            </button>
+            </Link>
           );
         })}
       </div>

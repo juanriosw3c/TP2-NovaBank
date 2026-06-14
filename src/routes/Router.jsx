@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import DashboardCliente from "../pages/DashboardCliente/DashboardCliente";
 import DashboardAdmin from "../pages/DashboardAdmin/DashboardAdmin";
+import Inversiones from "../pages/Inversiones/Inversiones";
 
 export const router = createBrowserRouter([
   {
@@ -27,4 +28,8 @@ export const router = createBrowserRouter([
     path: "/admin",
     element: <DashboardAdmin />,
   },
+  {
+    path: "/inversiones",
+    element: <Inversiones />,
+  }
 ]);

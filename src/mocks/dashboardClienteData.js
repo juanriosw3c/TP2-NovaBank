@@ -21,7 +21,7 @@ export const dashboardData = {
     { label: "Invertido", value: "$320.000", variant: "invested" },
   ],
   quickActions: [
-    { label: "Inversiones", icon: Landmark, tone: "purple" },
+    { label: "Inversiones", icon: Landmark, tone: "purple", path: "/inversiones" },
     { label: "Comprar dólar", icon: BadgeDollarSign, tone: "green" },
     { label: "Tarjetas", icon: CreditCard, tone: "yellow" },
     { label: "Transferir", icon: ArrowLeftRight, tone: "blue" },
