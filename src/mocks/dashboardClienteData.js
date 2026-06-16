@@ -22,7 +22,7 @@ export const dashboardData = {
   ],
   quickActions: [
     { label: "Inversiones", icon: Landmark, tone: "purple", path: "/inversiones" },
-    { label: "Comprar dólar", icon: BadgeDollarSign, tone: "green" },
+    { label: "Comprar dólar", icon: BadgeDollarSign, tone: "green", path: "/comprar-dolar" },
     { label: "Tarjetas", icon: CreditCard, tone: "yellow" },
     { label: "Transferir", icon: ArrowLeftRight, tone: "blue" },
     { label: "Mis movimientos", icon: ArrowLeftRight, tone: "violet" },
