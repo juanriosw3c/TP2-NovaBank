@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import DashboardCliente from "../pages/DashboardCliente/DashboardCliente";
 import DashboardAdmin from "../pages/DashboardAdmin/DashboardAdmin";
 import Inversiones from "../pages/Inversiones/Inversiones";
+import ComprarDolar from "../pages/ComprarDolar/ComprarDolar";
 
 export const router = createBrowserRouter([
   {
@@ -31,5 +32,9 @@ export const router = createBrowserRouter([
   {
     path: "/inversiones",
     element: <Inversiones />,
+  },
+  {
+    path: "/comprar-dolar",
+    element: <ComprarDolar />,
   }
 ]);
