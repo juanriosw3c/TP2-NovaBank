@@ -1,0 +1,74 @@
+.cards-page {
+  min-height: 100vh;
+  background: #070713;
+  color: #f8fafc;
+  padding-bottom: 2rem;
+}
+
+.cards-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #070713;
+}
+
+.cards-back-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: #d8d6e8;
+  transition: 0.2s;
+}
+
+.cards-back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.cards-logo {
+  height: 28px;
+  width: auto;
+}
+
+.cards-page-shell {
+  width: min(100% - 4rem, 980px);
+  margin: 0 auto;
+  padding-top: 2.4rem;
+}
+
+.cards-title {
+  margin-bottom: 1.5rem;
+}
+
+.cards-title h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.cards-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4c466c;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .cards-page-shell {
+    width: min(100% - 2rem, 980px);
+    padding-top: 1.6rem;
+  }
+}

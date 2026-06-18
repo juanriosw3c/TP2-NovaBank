@@ -1,0 +1,70 @@
+/* Dentro de InvestmentsList.module.css */
+.investmentsPanel {
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 24px;
+  background: #111128;
+  padding: 2rem;
+  align-self: start;
+}
+
+.investmentsPanel h2 {
+  font-size: 1.45rem;
+  margin: 0 0 1.5rem;
+}
+
+.investmentList {
+  display: grid;
+  gap: 0;
+}
+
+.investmentItem {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  color: #c4b5fd;
+  min-height: 72px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 1rem 0;
+}
+
+.investmentItem:last-child {
+  border-bottom: 0;
+}
+
+.investmentItem span {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+/* Colores de los círculos de las inversiones */
+.purple { background: #a78bfa; }
+.green { background: #34d399; }
+.yellow { background: #fbbf24; }
+
+.investmentItem strong {
+  color: #c4b5fd;
+  font-size: 1.2rem;
+}
+
+.investmentItem p {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .investmentsPanel {
+    padding: 1.5rem;
+  }
+
+  .investmentItem {
+    grid-template-columns: 16px 1fr;
+  }
+
+  .investmentItem strong {
+    grid-column: 2;
+    justify-self: start;
+    font-size: 1.05rem;
+  }
+}

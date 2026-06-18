@@ -1,0 +1,86 @@
+.account-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  padding: 0.7rem 1.1rem;
+  font-weight: 700;
+}
+
+.account-status span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+}
+/* Esto es todo lo que sobrevive en tu DashboardCliente.css global */
+.client-dashboard {
+  min-height: 100vh;
+  background: #070713;
+  color: #f8fafc;
+  padding-bottom: 2rem;
+  padding-top: 92px;
+}
+
+.dashboard-shell {
+  width: min(100% - 4rem, 1180px);
+  margin: 0 auto;
+  padding-top: 2.4rem;
+  transition: margin-left 0.3s ease;
+}
+
+.dashboard-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-hero p {
+  color: #8b87a5;
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.dashboard-hero h1 {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.1;
+}
+
+.dashboard-hero h1 span {
+  font-size: 1.7rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dashboard-side {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4c466c;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .dashboard-shell { width: min(100% - 2rem, 1180px); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .dashboard-hero { align-items: flex-start; flex-direction: column; }
+}

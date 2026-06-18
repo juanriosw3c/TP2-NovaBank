@@ -1,0 +1,296 @@
+.cardPanel {
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 24px;
+  background: #111128;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cardRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.debitCard {
+  flex: 1;
+  min-height: 178px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 88% 92%, rgba(168, 85, 247, 0.26), transparent 32%),
+    linear-gradient(135deg, #4c0d87, #281160);
+  color: #ffffff;
+  padding: 1.9rem;
+  box-shadow: inset 0 0 28px rgba(168, 85, 247, 0.2);
+  transition: .25s;
+}
+
+.debitCard:hover {
+  transform: translateY(-2px);
+}
+
+.frozen {
+  opacity: .6;
+  filter: grayscale(.9);
+}
+
+.debitCard p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c4b5fd;
+}
+
+.cardNumber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardNumber strong {
+  font-size: 1.45rem;
+  letter-spacing: 0.12em;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  color: #c4b5fd;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardInfo span {
+  font-size: .9rem;
+}
+
+.cvvContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.eyeButton {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: .2s;
+}
+
+.eyeButton:hover {
+  transform: scale(1.15);
+}
+
+.frozenLabel {
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(248, 113, 113, 0.18);
+  color: #fecaca;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.cardActions {
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.freezeButton,
+.deleteButton,
+.requestButton {
+  border: none;
+  border-radius: 14px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.freezeButton {
+  background: rgba(124, 58, 237, 0.18);
+  color: #ddd6fe;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.freezeButton:hover {
+  background: rgba(124, 58, 237, 0.28);
+}
+
+.deleteButton {
+  background: rgba(244, 63, 94, 0.12);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+.deleteButton:hover {
+  background: rgba(244, 63, 94, 0.2);
+}
+
+.requestButton {
+  width: 100%;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #ffffff;
+}
+
+.requestButton:hover {
+  filter: brightness(1.08);
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+.modal {
+  width: min(100%, 390px);
+  background: #111128;
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal h3 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.modal p {
+  margin: 0;
+  color: #c4b5fd;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 92, 246, 0.38);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.modal input::placeholder {
+  color: #8b87a5;
+}
+
+.cardTypeOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cardTypeOptions button {
+  min-height: 48px;
+  border: 1px solid rgba(139, 92, 246, 0.38);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.cardTypeOptions button:hover,
+.cardTypeOptions .selectedType {
+  border-color: #a855f7;
+  background: rgba(124, 58, 237, 0.22);
+  color: #ffffff;
+}
+
+.warning {
+  color: #fb7185 !important;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modalButtons button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.modalButtons button:first-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.modalButtons button:last-child {
+  background: #7c3aed;
+  color: white;
+}
+
+.modalButtons button:hover {
+  opacity: .9;
+}
+
+@media (max-width: 900px) {
+  .cardRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cardActions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardPanel {
+    padding: 1.25rem;
+  }
+
+  .cardFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

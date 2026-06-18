@@ -1,0 +1,91 @@
+/* Dentro de QuickActions.module.css */
+.dashboardSection {
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b87a5;
+  font-weight: 800;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.quickAction {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 20px;
+  background: #111128;
+  color: #c4b5fd;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.quickAction:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.6);
+}
+
+.quickActionIcon {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+}
+
+/* Variantes de colores para los fondos de los íconos */
+.purple,
+.violet {
+  background: rgba(124, 58, 237, 0.25);
+  color: #a78bfa;
+}
+
+.green {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+}
+
+.yellow {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+}
+
+.blue {
+  background: rgba(14, 165, 233, 0.16);
+  color: #38bdf8;
+}
+
+.pink {
+  background: rgba(236, 72, 153, 0.16);
+  color: #f472b6;
+}
+
+/* Reglas responsivas mapeadas del archivo original */
+@media (max-width: 1000px) {
+  .quickActions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .quickActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .quickAction {
+    min-height: 124px;
+  }
+}

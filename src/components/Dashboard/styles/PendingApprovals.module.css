@@ -1,0 +1,71 @@
+.panel {
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 24px;
+  background: #111128;
+  padding: 2rem;
+}
+
+.panel h2 {
+  font-size: 1.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  display: grid;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 1.1rem 0;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item h3 {
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+.item p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #8b87a5;
+}
+
+.item span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnCheck, .btnCross {
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btnCheck {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.btnCross {
+  background: rgba(244, 63, 94, 0.15);
+  color: #fb7185;
+}
+
+.btnCheck:hover, .btnCross:hover {
+  transform: scale(1.05);
+}
