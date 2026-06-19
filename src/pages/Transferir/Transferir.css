@@ -1,0 +1,381 @@
+.transfer-page {
+  min-height: 100vh;
+}
+
+.transfer-shell {
+  max-width: 980px;
+}
+
+.transfer-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
+  border: 0;
+  background: transparent;
+  color: #a78bfa;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.transfer-panel {
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 24px;
+  background: #111128;
+  padding: 2rem;
+}
+
+.transfer-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.transfer-heading p {
+  color: #8b87a5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.transfer-heading h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.transfer-primary,
+.transfer-secondary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 14px;
+  padding: 0 1.1rem;
+  border: 0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.transfer-primary {
+  background: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.24);
+}
+
+.transfer-secondary {
+  background: rgba(139, 92, 246, 0.14);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.32);
+}
+
+.transfer-primary.full {
+  width: 100%;
+}
+
+.transfer-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.transfer-tabs button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(139, 92, 246, 0.24);
+  border-radius: 14px;
+  background: #171735;
+  color: #c4b5fd;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.transfer-tabs button.active.violet {
+  border-color: rgba(167, 139, 250, 0.7);
+  background: rgba(124, 58, 237, 0.24);
+  color: #ffffff;
+}
+
+.transfer-tabs button.gold,
+.star-button.active {
+  color: #fbbf24;
+}
+
+.transfer-tabs button.active.gold {
+  border-color: rgba(251, 191, 36, 0.72);
+  background: rgba(245, 158, 11, 0.16);
+}
+
+.transfer-search {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: 16px;
+  background: #0b0b1d;
+  color: #8b87a5;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.transfer-search input,
+.modal-field input,
+.modal-field textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f8fafc;
+  font: inherit;
+}
+
+.transfer-search input::placeholder,
+.modal-field input::placeholder,
+.modal-field textarea::placeholder {
+  color: #6b6685;
+}
+
+.contacts-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 18px;
+  background: #0b0b1d;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.contact-row:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.contact-row h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+}
+
+.contact-row p,
+.contact-row span,
+.contact-row small {
+  display: block;
+  color: #8b87a5;
+  margin-top: 0.15rem;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-actions button,
+.modal-close {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+  cursor: pointer;
+}
+
+.contact-menu {
+  position: relative;
+}
+
+.contact-dropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  z-index: 4;
+  width: 190px;
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  border-radius: 14px;
+  background: #171735;
+  padding: 0.45rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.contact-dropdown button {
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: left;
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: transparent;
+  color: #f8fafc;
+}
+
+.contact-dropdown button:hover {
+  background: rgba(139, 92, 246, 0.16);
+}
+
+.empty-state {
+  border: 1px dashed rgba(139, 92, 246, 0.32);
+  border-radius: 18px;
+  color: #8b87a5;
+  padding: 2rem;
+  text-align: center;
+}
+
+.transfer-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 5, 16, 0.76);
+  padding: 1rem;
+}
+
+.transfer-modal {
+  position: relative;
+  width: min(100%, 500px);
+  border: 1px solid rgba(139, 92, 246, 0.38);
+  border-radius: 24px;
+  background: #111128;
+  padding: 2rem;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+}
+
+.modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.transfer-modal h2 {
+  margin-bottom: 1.4rem;
+  padding-right: 2.6rem;
+}
+
+.modal-field {
+  display: grid;
+  gap: 0.55rem;
+  color: #c4b5fd;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.modal-field input,
+.modal-field textarea {
+  min-height: 48px;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: 14px;
+  background: #0b0b1d;
+  padding: 0.85rem 1rem;
+}
+
+.modal-field textarea {
+  resize: vertical;
+}
+
+.form-error {
+  color: #fb7185;
+  font-weight: 800;
+  margin: 0.2rem 0 1rem;
+}
+
+.recipient-card,
+.summary-list,
+.available-balance {
+  border: 1px solid rgba(139, 92, 246, 0.24);
+  border-radius: 18px;
+  background: #0b0b1d;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.recipient-card p,
+.summary-list span,
+.available-balance span {
+  display: block;
+  color: #8b87a5;
+  margin-top: 0.75rem;
+}
+
+.recipient-card p:first-child,
+.summary-list span:first-child {
+  margin-top: 0;
+}
+
+.recipient-card strong,
+.summary-list strong,
+.available-balance strong {
+  display: block;
+  margin-top: 0.2rem;
+  color: #f8fafc;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #f8fafc;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.check-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #7c3aed;
+}
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.success-state {
+  text-align: center;
+}
+
+.success-state svg {
+  color: #34d399;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .transfer-panel,
+  .transfer-modal {
+    padding: 1.25rem;
+  }
+
+  .transfer-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .transfer-primary,
+  .transfer-secondary {
+    width: 100%;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    justify-content: flex-end;
+  }
+}
