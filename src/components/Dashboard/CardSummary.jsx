@@ -8,9 +8,7 @@ import {
 } from "lucide-react";
 import styles from "./styles/CardSummary.module.css";
 
-const CLIENT_PASSWORD = "cliente123";
-
-function CardSummary({ cards, setCards }) {
+function CardSummary({ cards, setCards, clientPassword, cardHolder }) {
   const [visibleNumbers, setVisibleNumbers] = useState({});
   const [visibleCvvs, setVisibleCvvs] = useState({});
   const [cvvPassword, setCvvPassword] = useState("");
@@ -59,7 +57,7 @@ function CardSummary({ cards, setCards }) {
   };
 
   const verifyPassword = () => {
-    if (cvvPassword === CLIENT_PASSWORD) {
+    if (cvvPassword === clientPassword) {
       setVisibleCvvs((prev) => ({
         ...prev,
         [selectedCard]: true,
@@ -79,7 +77,7 @@ function CardSummary({ cards, setCards }) {
   };
 
   const confirmFreeze = () => {
-    if (freezePassword !== CLIENT_PASSWORD) {
+    if (freezePassword !== clientPassword) {
       alert("Contraseña incorrecta.");
       return;
     }
@@ -106,7 +104,7 @@ function CardSummary({ cards, setCards }) {
   };
 
   const confirmDelete = () => {
-    if (deletePassword !== CLIENT_PASSWORD) {
+    if (deletePassword !== clientPassword) {
       alert("Contraseña incorrecta.");
       return;
     }
@@ -141,7 +139,7 @@ function CardSummary({ cards, setCards }) {
         id: Date.now(),
         type: isCredit ? "Crédito NovaBank" : "Débito NovaBank",
         number: newNumber,
-        holder: "Federico García",
+        holder: cardHolder,
         expires: `${expirationMonth}/${expirationYear}`,
         cvv: newCvv,
         frozen: false,

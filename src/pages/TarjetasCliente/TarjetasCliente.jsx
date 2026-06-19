@@ -1,36 +1,94 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, LogOut, Settings, ShieldCheck, User } from "lucide-react";
+
 import CardSummary from "../../components/Dashboard/CardSummary";
-import { dashboardData } from "../../mocks/dashboardClienteData";
 import logo from "../../assets/logo.png";
 import navbarStyles from "../../components/Dashboard/styles/DashboardNavbar.module.css";
+import { getCurrentClient } from "../../services/novabankStore";
 import "./TarjetasCliente.css";
 
-const CARDS_STORAGE_KEY = "novabank-client-cards";
+const cardsByClient = {
+  "cliente-1": [
+    {
+      id: 1,
+      type: "Débito NovaBank",
+      number: "4509123412343456",
+      holder: "Federico Garcia",
+      expires: "08/28",
+      cvv: "583",
+      frozen: false,
+    },
+    {
+      id: 2,
+      type: "Crédito NovaBank",
+      number: "5364123498761122",
+      holder: "Federico Garcia",
+      expires: "11/29",
+      cvv: "214",
+      frozen: false,
+    },
+  ],
+  "cliente-2": [
+    {
+      id: 3,
+      type: "Débito NovaBank",
+      number: "4509777711112222",
+      holder: "Martina Ruiz",
+      expires: "05/28",
+      cvv: "739",
+      frozen: false,
+    },
+  ],
+  "cliente-3": [
+    {
+      id: 4,
+      type: "Débito NovaBank",
+      number: "4509888833334444",
+      holder: "Nicolas Perez",
+      expires: "02/29",
+      cvv: "462",
+      frozen: false,
+    },
+    {
+      id: 5,
+      type: "Crédito NovaBank",
+      number: "5364555566667777",
+      holder: "Nicolas Perez",
+      expires: "09/30",
+      cvv: "905",
+      frozen: false,
+    },
+  ],
+};
 
-function getStoredCards() {
-  const storedCards = localStorage.getItem(CARDS_STORAGE_KEY);
+function getCardsKey(clientId) {
+  return `novabank-client-cards-${clientId}`;
+}
+
+function getStoredCards(clientId) {
+  const storedCards = localStorage.getItem(getCardsKey(clientId));
 
   if (!storedCards) {
-    return dashboardData.cards;
+    return cardsByClient[clientId] || [];
   }
 
   try {
     return JSON.parse(storedCards);
   } catch {
-    return dashboardData.cards;
+    return cardsByClient[clientId] || [];
   }
 }
 
 function TarjetasCliente() {
+  const client = getCurrentClient();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const [cards, setCards] = useState(getStoredCards);
+  const [cards, setCards] = useState(() => getStoredCards(client.id));
   const navigate = useNavigate();
 
   useEffect(() => {
-    localStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(cards));
-  }, [cards]);
+    localStorage.setItem(getCardsKey(client.id), JSON.stringify(cards));
+  }, [cards, client.id]);
 
   const handleLogout = () => {
     navigate("/login");
@@ -52,7 +110,7 @@ function TarjetasCliente() {
             aria-label="Perfil"
             onClick={() => setShowProfileMenu(!showProfileMenu)}
           >
-            {dashboardData.user.initials}
+            {client.initials}
           </button>
 
           {showProfileMenu && (
@@ -81,7 +139,12 @@ function TarjetasCliente() {
           <h1>Tarjetas</h1>
         </div>
 
-        <CardSummary cards={cards} setCards={setCards} />
+        <CardSummary
+          cards={cards}
+          setCards={setCards}
+          clientPassword={client.password}
+          cardHolder={client.name}
+        />
       </section>
 
       <footer className="cards-page-footer">

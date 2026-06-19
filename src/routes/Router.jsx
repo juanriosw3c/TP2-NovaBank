@@ -8,6 +8,7 @@ import DashboardAdmin from "../pages/DashboardAdmin/DashboardAdmin";
 import Inversiones from "../pages/Inversiones/Inversiones";
 import ComprarDolar from "../pages/ComprarDolar/ComprarDolar";
 import TarjetasCliente from "../pages/TarjetasCliente/TarjetasCliente";
+import Transferir from "../pages/Transferir/Transferir";
 
 export const router = createBrowserRouter([
   {
@@ -41,5 +42,9 @@ export const router = createBrowserRouter([
   {
     path: "/tarjetas",
     element: <TarjetasCliente />,
+  },
+  {
+    path: "/transferir",
+    element: <Transferir />,
   }
 ]);

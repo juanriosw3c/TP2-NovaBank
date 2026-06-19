@@ -1,21 +1,33 @@
+import { useEffect, useState } from "react";
+import { Eye } from "lucide-react";
+
 import BalanceCard from "../../components/Dashboard/BalanceCard";
 import DashboardNavbar from "../../components/Dashboard/DashboardNavbar";
 import InvestmentsList from "../../components/Dashboard/InvestmentsList";
 import MovementsList from "../../components/Dashboard/MovementsList";
 import QuickActions from "../../components/Dashboard/QuickActions";
-import { Eye } from "lucide-react";
-import { dashboardData } from "../../mocks/dashboardClienteData";
-import "./DashboardCliente.css";
 import Sidebar from "../../components/Dashboard/Sidebar";
-import { useState } from "react";
+import { dashboardData } from "../../mocks/dashboardClienteData";
+import { getDashboardData } from "../../services/novabankStore";
+import "./DashboardCliente.css";
 
 function DashboardCliente() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [clientData, setClientData] = useState(() => getDashboardData());
+
+  useEffect(() => {
+    const refreshData = () => setClientData(getDashboardData());
+
+    window.addEventListener("novabank:data-changed", refreshData);
+    return () => window.removeEventListener("novabank:data-changed", refreshData);
+  }, []);
+
+  const movements = clientData.movements.length > 0 ? clientData.movements : dashboardData.movements;
 
   return (
     <main className="client-dashboard">
       <DashboardNavbar
-        userInitials={dashboardData.user.initials}
+        userInitials={clientData.client.initials}
         onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
         isSidebarOpen={isSidebarOpen}
       />
@@ -31,18 +43,18 @@ function DashboardCliente() {
           <div>
             <p>Buen día,</p>
             <h1>
-              {dashboardData.user.name} <span>👋</span>
+              {clientData.client.name} <span>👋</span>
             </h1>
           </div>
 
           <span className="account-status">
             <span />
-            {dashboardData.user.status}
+            {clientData.client.status}
           </span>
         </section>
 
         <BalanceCard
-          balance={dashboardData.balance}
+          balance={clientData.balance}
           monthlyChange={dashboardData.monthlyChange}
           updatedAt={dashboardData.updatedAt}
           stats={dashboardData.stats}
@@ -51,7 +63,7 @@ function DashboardCliente() {
         <QuickActions actions={dashboardData.quickActions} />
 
         <section className="dashboard-grid">
-          <MovementsList movements={dashboardData.movements} />
+          <MovementsList movements={movements} />
 
           <div className="dashboard-side">
             <InvestmentsList investments={dashboardData.investments} />

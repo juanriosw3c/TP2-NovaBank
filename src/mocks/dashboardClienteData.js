@@ -24,7 +24,7 @@ export const dashboardData = {
     { label: "Inversiones", icon: Landmark, tone: "purple", path: "/inversiones" },
     { label: "Comprar dólar", icon: BadgeDollarSign, tone: "green", path: "/comprar-dolar" },
     { label: "Tarjetas", icon: CreditCard, tone: "yellow", path: "/tarjetas" },
-    { label: "Transferir", icon: ArrowLeftRight, tone: "blue" },
+    { label: "Transferir", icon: ArrowLeftRight, tone: "blue", path: "/transferir" },
     { label: "Mis movimientos", icon: ArrowLeftRight, tone: "violet" },
   ],
   movements: [

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginClient } from "../../services/novabankStore";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -9,17 +10,17 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Intentando login con:", email, password); // <-- Línea de control
-
     if (email.trim() === "admin@novabank.com" && password === "admin123") {
-      console.log("¡Entró como Admin!");
       navigate("/admin");
-    } else if (email.trim() === "cliente@novabank.com" && password === "cliente123") {
-      console.log("¡Entró como Cliente!");
-      navigate("/cliente");
-    } else {
-      console.log("No coincidió ninguna credencial");
+      return;
     }
+
+    if (loginClient(email, password)) {
+      navigate("/cliente");
+      return;
+    }
+
+    alert("Credenciales incorrectas");
   };
 
   return (

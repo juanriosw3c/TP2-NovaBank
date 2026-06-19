@@ -30,15 +30,15 @@ function Sidebar({ isOpen, onClose, isAdmin = false }) {
             <a href="#inicio" className={styles.active}>
               <Home size={18} style={{ marginRight: '12px' }} /> Inicio
             </a>
-            <a href="#transferencias">
-              <ArrowLeftRight size={18} style={{ marginRight: '12px' }} /> Transferencias
-            </a>
+            <Link to="/transferir" onClick={onClose}>
+              <ArrowLeftRight size={18} style={{ marginRight: '12px' }} /> Transferir
+            </Link>
             <Link to="/tarjetas" onClick={onClose}>
               <CreditCard size={18} style={{ marginRight: '12px' }} /> Mis Tarjetas
             </Link>
-            <a href="#inversiones">
+            <Link to="/inversiones" onClick={onClose}>
               <BarChart3 size={18} style={{ marginRight: '12px' }} /> Inversiones
-            </a>
+            </Link>
           </>
         )}
       </nav>
